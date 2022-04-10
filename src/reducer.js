@@ -1,4 +1,4 @@
-function reducer(state, action) {
+function reducer(state = [], action) {
   let lastId = 0;
 
   switch (action.type) {
@@ -6,7 +6,7 @@ function reducer(state, action) {
       return [
         ...state,
         {
-          id: lastId++,
+          id: ++lastId,
           description: action.payload.description,
           resolved: false,
         },
@@ -15,6 +15,6 @@ function reducer(state, action) {
       return state.filter((bug) => bug.id !== action.payload.id);
 
     default:
-      state;
+      return state;
   }
 }
