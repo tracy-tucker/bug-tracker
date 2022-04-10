@@ -1,4 +1,4 @@
-function reducer(state = [], action) {
+export default function reducer(state = [], action) {
   let lastId = 0;
 
   switch (action.type) {
